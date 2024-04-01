@@ -17,7 +17,9 @@ export const TodoItem = ({id, isDone, content, date, onUpdate, onDelete}) => {
       type="checkbox" />
       <div className="content">{content}</div>
       <div className="date">{new Date().toLocaleDateString()}</div>
-      <button onClick={onClickDeleteButton}>삭제</button>
+      <button onClick={onClickDeleteButton}>삭제
+      
+      </button>
     </div>
   );
 };

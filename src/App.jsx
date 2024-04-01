@@ -5,24 +5,7 @@ import { List } from "./components/List";
 import "./App.css";
 
 const mockData = [
-  {
-    id: 0,
-    isDone: false,
-    content: "리액트 공부하기",
-    date: new Date().getTime,
-  },
-  {
-    id: 1,
-    isDone: false,
-    content: "엄준식 때리맥이기",
-    date: new Date().getTime,
-  },
-  {
-    id: 2,
-    isDone: false,
-    content: "박위정 응디 때리맥이기",
-    date: new Date().getTime,
-  },
+  
 ];
 
 function App() {
@@ -47,8 +30,9 @@ function App() {
     setTodos(todos.map((todo)=>todo.id === targetId ? {...todo, isDone: !todo.isDone}:todo))
   }
   const onDelete = (targetId) => {
-    
-    setTodos(todos.filter((todo)=>todo.id !== targetId))
+
+  
+    setTodos(todos.filter((todo)=> todo.id !== targetId))
 
   }
   return (
