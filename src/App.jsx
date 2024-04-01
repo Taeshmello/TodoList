@@ -20,7 +20,7 @@ const mockData = [
   {
     id: 2,
     isDone: false,
-    content: "엄준식 화이팅",
+    content: "박위정 응디 때리맥이기",
     date: new Date().getTime,
   },
 ];
@@ -44,7 +44,7 @@ function App() {
     <div className="Container">
       <Header />
       <Editor onCreate={onCreate} />
-      <List />
+      <List todos = {todos} />
     </div>
   );
 }
