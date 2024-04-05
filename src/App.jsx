@@ -50,6 +50,9 @@ function App() {
       targetId: targetId
     })
   }
+
+  const a = {a: 1};
+  const b = {a: 1};
   return (
     <div className="Container">
       <Header />
