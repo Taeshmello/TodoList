@@ -1,4 +1,4 @@
-import { useState, useRef, useReducer } from "react";
+import { useState, useRef, useReducer, useCallback} from "react";
 import { Header } from "./components/Header";
 import { Editor } from "./components/Editor";
 import { List } from "./components/List";
@@ -24,7 +24,7 @@ function App() {
 
   const idRef = useRef(0);
 
-  const onCreate = (content) => {
+  const onCreate = useCallback( (content) => {
     dispatch({
       type:"CREATE",
       data: {
@@ -34,25 +34,24 @@ function App() {
         date: new Date().getTime
       }
     })
-  };
+  },[]);
 
 
-  const onUpdate = (targetId) => {
+  const onUpdate =useCallback( (targetId) => {
     dispatch({
       type: "UPDATE",
       targetId:targetId,
     
     })
-  }
-  const onDelete = (targetId) => {
+  },[]);
+
+
+ const onDelete = useCallback((targetId)=>{
     dispatch({
       type:"DELETE",
-      targetId: targetId
+      targetId: targetId,
     })
-  }
-
-  const a = {a: 1};
-  const b = {a: 1};
+  },[]);
   return (
     <div className="Container">
       <Header />
